@@ -7,14 +7,46 @@
       <div class="middle">
         <div class="inner">
           <div class="clock-wrapper">
-            <h1><span><i class="fa fa-clock-o"></i></span> Hora Actual</h1>
+            <h1><span><i class="fa fa-clock-o"></i></span> TickTock</h1>
 
-            <p>{{ clock.clock | date:'mediumTime'}}</p>
+            <p>{{ clock.clock | date:'medium'}}</p>
 
-            <p><a href="" ng-click="clock.setAlarm()"><span><i class="fa fa-bed"></i></span> Set Alarm to wake you
-              up</a>
+            <p>
+              <button type="button" data-toggle="modal" data-target="#alarm-modal">
+                <i class="fa fa-bed"></i></span> ¡Alarma!
+              </button>
+            </p>
+            <p ng-show="!clock.isMuted"><span ng-click="clock.mute()"><i class="fa fa-volume-off"></i></span></p>
+
+            <p ng-show="clock.isMuted"><span ng-click="clock.unmute()"><i class="fa fa-volume-up"></i></span></p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="alarm-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Alarma</h4>
+      </div>
+      <div class="modal-body">
+        <p>Seleccione la hora:</p>
+        <datetimepicker
+          ng-model="clock.alarmTime"
+          date-format="dd-MMM-yyyy"
+          date-options="dateOptions"
+          date-disabled="isDisabledDate(date, mode)">
+        </datetimepicker>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" ng-click="clock.setAlarm()">Guardar</button>
       </div>
     </div>
   </div>

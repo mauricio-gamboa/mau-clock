@@ -13,7 +13,10 @@ angular
     'ngAnimate',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap',
+    'ui.bootstrap.datetimepicker',
+    'ngAudio'
   ])
   .config(function ($routeProvider) {
     $routeProvider
