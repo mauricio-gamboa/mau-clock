@@ -1,13 +1,20 @@
 <div class="site-wrapper" full-height backgrounds>
-  <div class="container overall">
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <h1><span><i class="fa fa-clock-o"></i></span> Hora Actual</h1>
+  <div class="clouds clouds-3"></div>
+  <div class="clouds clouds-2"></div>
+  <div class="clouds clouds-1"></div>
+  <div class="container overall" full-height>
+    <div class="outer">
+      <div class="middle">
+        <div class="inner">
+          <div class="clock-wrapper">
+            <h1><span><i class="fa fa-clock-o"></i></span> Hora Actual</h1>
 
-        <p>{{ clock.clock | date:'mediumTime'}}</p>
+            <p>{{ clock.clock | date:'mediumTime'}}</p>
 
-        <p><a href="" ng-click="clock.setAlarm()"><span><i class="fa fa-bed"></i></span> Set Alarm to wake you up</a>
-        </p>
+            <p><a href="" ng-click="clock.setAlarm()"><span><i class="fa fa-bed"></i></span> Set Alarm to wake you
+              up</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

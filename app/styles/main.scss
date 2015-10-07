@@ -5,6 +5,10 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
 
+@import "keyframes";
+
+@import "backgrounds";
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -17,74 +21,28 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
   z-index: 100;
 }
 
-.bgs {
-  position: relative;
+.outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 
-  .bg {
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    -webkit-transition: opacity 4s linear 0s;
-    transition: opacity 4s linear 0s;
-    width: 100%;
+  .middle {
+    display: table-cell;
+    vertical-align: middle;
 
-    &.show {
-      opacity: 1;
-      -webkit-transition: opacity 4s linear 0s;
-      transition: opacity 4s linear 0s;
-    }
-
-    &.bg1 {
-      background: url("../images/home-bg-0.png") repeat-x 0 50%;
-    }
-
-    &.bg2 {
-      background: url("../images/home-bg-1.png") repeat-x 0 50%;
-    }
-
-    &.bg3 {
-      background: url("../images/home-bg-2.png") repeat-x 0 50%;
-    }
-
-    &.bg4 {
-      background: url("../images/home-bg-3.png") repeat-x 0 50%;
-    }
-
-    &.bg5 {
-      background: url("../images/home-bg-4.png") repeat-x 0 50%;
+    .inner {
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
     }
   }
 }
 
-//.bg {
-//  -webkit-transition: background 4s linear 0s;
-//  -moz-transition: background 4s linear 0s;
-//  -ms-transition: background 4s linear 0s;
-//  -o-transition: background 4s linear 0s;
-//  transition: background 4s linear 0s;
-//
-//  &.zero {
-//    background: url("../images/home-bg-0.png") repeat-x 0 50%;
-//  }
-//
-//  &.one {
-//    background: url("../images/home-bg-1.png") repeat-x 0 50%;
-//  }
-//
-//  &.two {
-//    background: url("../images/home-bg-2.png") repeat-x 0 50%;
-//  }
-//
-//  &.three {
-//    background: url("../images/home-bg-3.png") repeat-x 0 50%;
-//  }
-//
-//  &.four {
-//    background: url("../images/home-bg-4.png") repeat-x 0 50%;
-//  }
-//}
+.clock-wrapper {
+  text-align: center;
+  margin-top: -100px;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
