@@ -21,8 +21,6 @@ var ClockCtrl = function ($rootScope, $timeout, ngAudio, localStorageService, $f
 
   this.clock = "loading clock...";
 
-  this.tickInterval = 1000;
-
   this.isMuted = false;
 
   this.showAlarmStopper = false;
@@ -36,7 +34,7 @@ var ClockCtrl = function ($rootScope, $timeout, ngAudio, localStorageService, $f
 
     if (next.stopAudio) {
       _this.tickSound.destroy();
-      _this.alarmSound.$destroy();
+      _this.alarmSound.destroy();
     }
   }));
 };
@@ -56,11 +54,11 @@ ClockCtrl.prototype.initializeClock = function () {
 
     _this.clock = Date.now();
 
-    _this.timeout(tick, _this.tickInterval);
+    _this.timeout(tick, 1000);
   };
 
   // Start the timer
-  _this.timeout(tick, _this.tickInterval);
+  _this.timeout(tick, 1000);
 };
 
 ClockCtrl.prototype.setAlarm = function () {

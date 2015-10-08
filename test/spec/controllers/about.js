@@ -17,7 +17,9 @@ describe('Controller: AboutCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(AboutCtrl.awesomeThings.length).toBe(3);
+  it('should set the personal data', function () {
+    expect(AboutCtrl.me.name).toBe('Mauricio Gamboa Loría');
+    expect(AboutCtrl.me.github).toBe('https://github.com/mauricio-gamboa');
+    expect(AboutCtrl.me.linkedin).toBe('https://cr.linkedin.com/in/magalocr');
   });
 });
