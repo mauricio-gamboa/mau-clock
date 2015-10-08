@@ -18,7 +18,7 @@ From the root folder of the application.
 
     $ sudo npm install
 
-### 4. Install Bower if you don't have it yet
+### 4. Install Bower globally if you don't have it yet
 
     $ sudo npm install -g bower
 
@@ -27,12 +27,15 @@ From the root folder of the application.
 
     $ bower install
     
-### 6. Build the app locally
+### 6. Install grunt-cli globally if you dont have it yet
+    $sudo npm install -g grunt-cli
+    
+### 7. Build the app locally
 From the root folder of the application.
 
     $ grunt serve
      
-### 7. View the app
+### 8. View the app
 
     http://localhost:9000/#/
 
