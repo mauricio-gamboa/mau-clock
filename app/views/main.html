@@ -9,16 +9,27 @@
           <div class="clock-wrapper">
             <h1><span><i class="fa fa-clock-o"></i></span> TickTock</h1>
 
-            <p>{{ clock.clock | date:'medium'}}</p>
+            <div class="clock" ng-cloak>{{ clock.clock | date:'medium'}}</div>
 
-            <p>
-              <button type="button" data-toggle="modal" data-target="#alarm-modal">
-                <i class="fa fa-bed"></i></span> ¡Alarma!
-              </button>
-            </p>
-            <p ng-show="!clock.isMuted"><span ng-click="clock.mute()"><i class="fa fa-volume-off"></i></span></p>
+            <div class="controls">
+              <div class="control alarm-setter">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alarm-modal">
+                  <i class="fa fa-bed"></i></span> Set the alarm!
+                </button>
+              </div>
+              <div class="control mute" ng-show="!clock.isMuted">
+                <span class="btn btn-danger" ng-click="clock.mute()"><i class="fa fa-volume-off"></i> Mute</span>
+              </div>
+              <div class="control unmute" ng-show="clock.isMuted" ng-cloak>
+              <span class="btn btn-danger" ng-click="clock.unmute()"><i
+                class="fa fa-volume-up"></i> Un-mute</span>
+              </div>
 
-            <p ng-show="clock.isMuted"><span ng-click="clock.unmute()"><i class="fa fa-volume-up"></i></span></p>
+              <div class="control alarm-stopper" ng-show="clock.showAlarmStopper">
+              <span class="btn btn-danger" ng-click="clock.stopAlarm()"><i
+                class="fa fa-stop"></i> Stop alarm</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -46,7 +57,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" ng-click="clock.setAlarm()">Guardar</button>
+        <button type="button" class="btn btn-primary" ng-click="clock.setAlarm()" data-dismiss="modal">Guardar</button>
       </div>
     </div>
   </div>

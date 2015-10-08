@@ -16,7 +16,8 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'ui.bootstrap.datetimepicker',
-    'ngAudio'
+    'ngAudio',
+    'LocalStorageModule'
   ])
   .config(function ($routeProvider) {
     $routeProvider

@@ -5,15 +5,25 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
 @import "keyframes";
 
 @import "backgrounds";
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .overall {
@@ -25,7 +35,7 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
   display: table;
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: calc(100% - 30px);
 
   .middle {
     display: table-cell;
@@ -42,9 +52,30 @@ $fa-font-path: "../bower_components/font-awesome/fonts/";
 .clock-wrapper {
   text-align: center;
   margin-top: -100px;
+
+  h1 {
+    color: white;
+    margin: 0;
+  }
+}
+
+.clock {
+  color: white;
+  font-size: 4em;
+  margin: 30px 0;
+}
+
+.controls {
+  text-align: center;
+
+  > .control {
+    display: inline-block;
+  }
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-
+@media screen and (max-width: 768px) {
+  .clock {
+    font-size: 2em;
+  }
 }
