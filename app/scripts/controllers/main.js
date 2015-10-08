@@ -33,8 +33,8 @@ var ClockCtrl = function ($rootScope, $timeout, ngAudio, localStorageService, $f
     var _this = this;
 
     if (next.stopAudio) {
-      _this.tickSound.destroy();
       _this.alarmSound.destroy();
+      _this.tickSound.destroy();
     }
   }));
 };
