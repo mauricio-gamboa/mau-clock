@@ -29,7 +29,8 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controllerAs: 'about',
+        stopAudio: true
       })
       .otherwise({
         redirectTo: '/'

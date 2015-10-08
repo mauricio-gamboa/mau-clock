@@ -16,6 +16,10 @@ angular.module('mauClockApp')
 
         element.prepend('<div class="bg bg1 show"><div>');
 
+        element.prepend('<div class="clouds clouds-1"><div>');
+        element.prepend('<div class="clouds clouds-2"><div>');
+        element.prepend('<div class="clouds clouds-3"><div>');
+
         var current = 1;
 
         $interval(function () {

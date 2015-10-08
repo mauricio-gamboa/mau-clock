@@ -1,8 +1,6 @@
 <div class="site-wrapper" full-height backgrounds>
-  <div class="clouds clouds-3"></div>
-  <div class="clouds clouds-2"></div>
-  <div class="clouds clouds-1"></div>
   <div class="container overall" full-height>
+    <a href="#/about" class="about-me btn btn-info">About me!</a>
     <div class="outer">
       <div class="middle">
         <div class="inner">
@@ -17,17 +15,23 @@
                   <i class="fa fa-bed"></i></span> Set the alarm!
                 </button>
               </div>
+
               <div class="control mute" ng-show="!clock.isMuted">
-                <span class="btn btn-danger" ng-click="clock.mute()"><i class="fa fa-volume-off"></i> Mute</span>
+                <span class="btn btn-danger" ng-click="clock.mute()">
+                  <i class="fa fa-volume-off"></i> Mute
+                </span>
               </div>
+
               <div class="control unmute" ng-show="clock.isMuted" ng-cloak>
-              <span class="btn btn-danger" ng-click="clock.unmute()"><i
-                class="fa fa-volume-up"></i> Un-mute</span>
+                <span class="btn btn-danger" ng-click="clock.unmute()">
+                  <i class="fa fa-volume-up"></i> Un-mute
+                </span>
               </div>
 
               <div class="control alarm-stopper" ng-show="clock.showAlarmStopper">
-              <span class="btn btn-danger" ng-click="clock.stopAlarm()"><i
-                class="fa fa-stop"></i> Stop alarm</span>
+                <span class="btn btn-danger" ng-click="clock.stopAlarm()">
+                  <i class="fa fa-stop"></i> Stop alarm
+                </span>
               </div>
             </div>
           </div>

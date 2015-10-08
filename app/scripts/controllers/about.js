@@ -7,11 +7,19 @@
  * # AboutCtrl
  * Controller of the mauClockApp
  */
-angular.module('mauClockApp')
-  .controller('AboutCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+
+var AboutCtrl = function (ngAudio) {
+  this.ngAudio = ngAudio;
+
+  this.ngAudio.mute();
+
+  this.me = {
+    name: 'Mauricio Gamboa Loría',
+    github: 'https://github.com/mauricio-gamboa',
+    linkedin: 'https://cr.linkedin.com/in/magalocr'
+  };
+};
+
+AboutCtrl.$inject = ['ngAudio'];
+
+angular.module('mauClockApp').controller('AboutCtrl', AboutCtrl);

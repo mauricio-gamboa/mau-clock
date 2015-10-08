@@ -8,7 +8,7 @@
  * Controller of the mauClockApp
  */
 
-var ClockCtrl = function ($timeout, ngAudio, localStorageService, $filter) {
+var ClockCtrl = function ($rootScope, $timeout, ngAudio, localStorageService, $filter) {
   this.timeout = $timeout;
 
   this.tickSound = ngAudio.load('../sounds/tick.mp3');
@@ -19,7 +19,7 @@ var ClockCtrl = function ($timeout, ngAudio, localStorageService, $filter) {
 
   this.filter = $filter;
 
-  this.clock = "loading clock..."; // initialise the time variable
+  this.clock = "loading clock...";
 
   this.tickInterval = 1000;
 
@@ -27,9 +27,18 @@ var ClockCtrl = function ($timeout, ngAudio, localStorageService, $filter) {
 
   this.showAlarmStopper = false;
 
-  this.alarmTime = '';
+  this.alarmTime = (this.localStorageService.get('alarm')) ? (new Date(this.localStorageService.get('alarm'))) : '';
 
   this.initializeClock();
+
+  $rootScope.$on('$routeChangeStart', angular.bind(this, function (event, next) {
+    var _this = this;
+
+    if (next.stopAudio) {
+      _this.tickSound.destroy();
+      _this.alarmSound.$destroy();
+    }
+  }));
 };
 
 ClockCtrl.prototype.initializeClock = function () {
@@ -57,6 +66,7 @@ ClockCtrl.prototype.initializeClock = function () {
 ClockCtrl.prototype.setAlarm = function () {
   var _this = this;
   var date = _this.filter('date')(_this.alarmTime, 'medium');
+  _this.alarmTime = date;
   _this.localStorageService.set('alarm', date);
 };
 
@@ -90,9 +100,10 @@ ClockCtrl.prototype.stopAlarm = function () {
   var _this = this;
   _this.alarmSound.stop();
   _this.showAlarmStopper = false;
+  _this.alarmTime = '';
   _this.localStorageService.remove('alarm');
 };
 
-ClockCtrl.$inject = ['$timeout', 'ngAudio', 'localStorageService', '$filter'];
+ClockCtrl.$inject = ['$rootScope', '$timeout', 'ngAudio', 'localStorageService', '$filter'];
 
 angular.module('mauClockApp').controller('ClockCtrl', ClockCtrl);
