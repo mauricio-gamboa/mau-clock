@@ -14,6 +14,7 @@ Pull the latest version of the system from the `master` branch.
 		$ git clone https://github.com/mauricio-gamboa/mau-clock.git
 				
 ### 3. Install NPM Dependencies
+From the root folder of the application.
 
     $ sudo npm install
 
