@@ -11,9 +11,9 @@
 var ClockCtrl = function ($rootScope, $timeout, ngAudio, localStorageService, $filter) {
   this.timeout = $timeout;
 
-  this.tickSound = ngAudio.load('../sounds/tick.mp3');
+  this.tickSound = ngAudio.load('sounds/tick.mp3');
 
-  this.alarmSound = ngAudio.load('../sounds/alarm.mp3');
+  this.alarmSound = ngAudio.load('sounds/alarm.mp3');
 
   this.localStorageService = localStorageService;
 
