@@ -5,3 +5,9 @@
 /bower_components
 workspace.xml
 .idea/workspace.xml
+libraries
+vcs.xml
+modules.xml
+misc.xml
+mau-clock.iml
+jsLibraryMappings.xml
